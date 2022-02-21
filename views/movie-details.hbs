@@ -1,26 +1,38 @@
-<img src="{{response.image}}" alt="movie">
-
-<nav>
-  <a href="/movies">Go back</a>
-</nav>
-
 <div>
-  <h1>{{response.title}}</h1>
-  <h3>{{response.director}}</h3>
+  
+  <div>
+    <img src="{{response.image}}" alt="movie">
+  </div>
+  
+  <div>
+    <nav>
+      <a href="/movies">Go back</a>
+    </nav>
 
-  <h3>Stars</h3>
-  <ul>
-    {{#each response.stars}}
+    <h1>{{response.title}}</h1>
+    <h3>{{response.director}}</h3>
+
+    <h3>Stars</h3>
+    <ul>
+      {{#each response.stars}}
+      
+      <li>
+      {{this}}
+      </li>
+      
+      {{/each}}
+
+    </ul>
+
+    <h5>{{response.description}}</h1>
     
-    <li>
-    {{this}}
-    </li>
-    
+    {{#each response.showtimes}}
+
+      {{this}} |
+
     {{/each}}
 
-  </ul>
+  
 
-  <h5>{{response.description}}</h1>
-  <h5>{{response.showtimes}}</h1>
-
+  </div>
 </div>
